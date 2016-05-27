@@ -23,7 +23,7 @@ record = doc["#{output}"][0]
 %x( mkdir ./#{dir1}/#{dir2} )
 
 File.open("./#{dir1}/#{dir2}/geoblacklight.json","w") do |f|
-  f.write(record.to_json)
+  f.write(JSON.pretty_generate(record))
 end
 
 i += 1
